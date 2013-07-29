@@ -9,6 +9,12 @@
 
     <name>utils</name>
     <url>http://maven.apache.org</url>
+    <scm>
+        <connection>scm:git:git@github.com:smecsia/smecsia-utils.git</connection>
+        <developerConnection>scm:git:git@github.com:smecsia/smecsia-utils.git</developerConnection>
+        <url>scm:git:git@github.com:smecsia/smecsia-utils.git</url>
+        <tag>HEAD</tag>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,4 +47,21 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <tagNameFormat>smartfox-tools-@{project.version}</tagNameFormat>
+                    <branchName>smartfox-tools-${project.version}-hotfix</branchName>
+                    <preparationGoals>clean install -DcreateChecksum=true</preparationGoals>
+                    <goals>package</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
