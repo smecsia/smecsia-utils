@@ -55,8 +55,8 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.3.1</version>
                 <configuration>
-                    <tagNameFormat>smartfox-tools-@{project.version}</tagNameFormat>
-                    <branchName>smartfox-tools-${project.version}-hotfix</branchName>
+                    <tagNameFormat>smecsia-utils-@{project.version}</tagNameFormat>
+                    <branchName>smecsia-utils-${project.version}-hotfix</branchName>
                     <preparationGoals>clean install -DcreateChecksum=true</preparationGoals>
                     <goals>package</goals>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
